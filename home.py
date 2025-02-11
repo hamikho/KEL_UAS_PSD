@@ -15,7 +15,7 @@ option = st.sidebar.radio("Pilih Halaman:",
 if option == "Home":
     st.title("Proyek Streamlit")
     st.write("Nama Anggota:")
-    st.write("[SENDI FAUZAN_10123180]  |  [MUHAMMAD ZIDDAN ARYAN_10123185]")
+    st.write("[SENDI FAUZAN_10123180] tetew |  [MUHAMMAD ZIDDAN ARYAN_10123185]")
     st.write("[NOPAN RIZKI RAMDANI_10123199]  |  [MUHAMAD DZAKY ABDULLAH_10123181]")
     st.write("[MUHAMMAD AZMI FADHLUROHMMAN_10123192]  |  [VIEZAL NABIL DZAIKRA_10123192]")
 
