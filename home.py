@@ -1,6 +1,5 @@
 import streamlit as st
-
-
+import pandas as pd
 import soal1_sendi
 import soal2_nopan
 import soal3_ziddan
@@ -13,13 +12,40 @@ st.sidebar.title("Navigasi")
 option = st.sidebar.radio("Pilih Halaman:", 
                           ("Home", "Soal 1", "Soal 2", "Soal 3", "Soal 4", "Soal 5", "Soal 6"))
 
+# Load dataset
+day = pd.read_csv('day.csv')
+hour = pd.read_csv('hour.csv')
+
+# Data Cleaning
+day = day.dropna().dropna(axis=1).drop_duplicates()
+hour = hour.dropna().dropna(axis=1).drop_duplicates()
+
+# Konversi kolom tanggal
+day['dteday'] = pd.to_datetime(day['dteday'])
+day['month'] = day['dteday'].dt.month
+
+# Simpan hasil cleaning agar bisa digunakan di Soal 1
+day.to_csv('day_cleaned.csv', index=False)
+hour.to_csv('hour_cleaned.csv', index=False)
+
+# Menyediakan dataset agar bisa diimpor ke soal lain
+DATA_DAY = day
+DATA_HOUR = hour
+
 # Tampilkan halaman sesuai pilihan
 if option == "Home":
-    st.title("Proyek Streamlit")
+    
+    st.title("KELOMPOK 3 PSD PROJEK TUGAS BESAR")
+    st.title("Analisis day.csv dan hour.csv")
     st.write("Nama Anggota:")
-    st.write("[SENDI FAUZAN_10123180] tetew |  [MUHAMMAD ZIDDAN ARYAN_10123185]")
-    st.write("[NOPAN RIZKI RAMDANI_10123199]  |  [MUHAMAD DZAKY ABDULLAH_10123181]")
-    st.write("[MUHAMMAD AZMI FADHLUROHMMAN_10123192]  |  [VIEZAL NABIL DZAIKRA_10123192]")
+    st.write("[SENDI FAUZAN                - 10123180]")
+    st.write("[MUHAMMAD ZIDDAN ARYAN       - 10123185]")
+    st.write("[NOPAN RIZKI RAMDANI         - 10123199]")
+    st.write("[MUHAMAD DZAKY ABDULLAH      - 10123181]")
+    st.write("[MUHAMMAD AZMI FADHLUROHMMAN - 10123192]")
+    st.write("[VIEZAL NABIL DZAIKRA        - 10123192]")
+
+
 
 elif option == "Soal 1":
     soal1_sendi.run()
