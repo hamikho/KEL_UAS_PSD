@@ -6,14 +6,14 @@ import home
 def run():
     st.title("Soal 4")
     st.write("Ini adalah konten untuk Soal 4.")
-    st.write("Menampilklan banyak penyewa perminggu menggukan histogram?- 10123181 - Muhamad Dzaky Abdullah")
+    st.write("Menampilklan banyak penyewa perminggu menggukan histogram - 10123181 - Muhamad Dzaky Abdullah")
     
     st.title("Analisis Penyewaan Sepeda")
 
     # Mengambil dataset yang sudah dibersihkan dari home.py
     day = home.DATA_DAY  # Menggunakan dataset 'day' yang sudah dibersihkan dari home.py
     
-    # Plot histogram jumlah penyewa per minggu
+    # Mengelompokkan data berdasarkan minggu (menggunakan nomor minggu dari tanggal)
     day["dteday"] = pd.to_datetime(day["dteday"])
     day["week_number"] = day["dteday"].dt.isocalendar().week
     
