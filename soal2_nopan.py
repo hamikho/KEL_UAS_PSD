@@ -5,7 +5,7 @@ import home
 
 def run():
     st.title("Soal 2")
-    st.write("Ini adalah konten untuk Soal 2.")
+    st.write("Ini adalah konten untuk Soal 2(Nopan Rizki Ramdani - 10123199).")
     st.write("Silakan edit konten ini sesuai kebutuhan.")
     # Mengambil dataset yang sudah dibersihkan dari home.py
     day = home.DATA_DAY  # Menggunakan dataset 'day' yang sudah dibersihkan dari home.py
