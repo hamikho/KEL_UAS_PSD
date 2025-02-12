@@ -26,8 +26,16 @@ def run():
     # Ganti index dengan label kondisi cuaca yang lebih deskriptif
     weather_data.index = weather_data.index.map(weather_labels)
 
+    #Soal
+    st.title("Kondisi cuaca mana yang paling banyak peminjaman sepeda??")
+    st.write("""
+        Kondisi Cuaca Yang paling Banyak Peminjaman Sepeda adalah pada saat cuaca cerah karena lebih aman untuk bersepeda tanpa ada halangan hujan, badai atau banjir.
+        Untuk Lebih Jelasnya bisa dilihat dari grafik berikut!!
+    """)
+
+
     # Streamlit UI
-    st.header("Peminjaman Sepeda Berdasarkan Kondisi Cuaca")
+    st.header("Data Peminjaman Sepeda Berdasarkan Kondisi Cuaca")
 
     # Membuat bar chart
     fig, ax = plt.subplots(figsize=(8, 6))
