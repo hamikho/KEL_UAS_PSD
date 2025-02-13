@@ -10,10 +10,9 @@ import soal6_viezal
 # Navbar
 st.sidebar.title("Navigasi")
 option = st.sidebar.radio(
-    "Pilih Halaman:", 
-    ("Home", "Soal 1", "Soal 2", "Soal 3", "Soal 4", "Soal 5", "Soal 6"), 
-    key="sidebar_menu"
-)
+    "Pilih Halaman:",
+    ("Home", "Soal 1", "Soal 2", "Soal 3", "Soal 4", "Soal 5", "Soal 6")
+) 
 
 # Load dataset
 day = pd.read_csv('day.csv')

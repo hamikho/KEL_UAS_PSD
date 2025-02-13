@@ -1,0 +1,7 @@
+# ini library
+
+streamlit
+matplotlib
+pandas
+seaborn
+numpy
