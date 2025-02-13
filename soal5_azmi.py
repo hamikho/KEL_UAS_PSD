@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import home
 
 def run():
     st.title("Soal 5")
@@ -10,7 +11,7 @@ def run():
     st.write("Silakan edit konten ini sesuai kebutuhan.")
 
     # Load data
-    day = pd.read_csv('day.csv')
+    day = home.DATA_DAY  # Menggunakan dataset 'day' yang sudah dibersihkan dari home.py
 
     # Kelompokkan data berdasarkan kondisi cuaca (weathersit) dan jumlahkan peminjaman sepeda (cnt)
     weather_data = (day.groupby('weathersit')['cnt'].sum() / day['cnt'].sum()) * 100
@@ -27,12 +28,17 @@ def run():
     weather_data.index = weather_data.index.map(weather_labels)
 
     #Soal
-    st.title("Kondisi cuaca mana yang paling banyak peminjaman sepeda??")
+    st.title("1.Kondisi cuaca mana yang paling banyak peminjaman sepeda??")
     st.write("""
         Kondisi Cuaca Yang paling Banyak Peminjaman Sepeda adalah pada saat cuaca cerah karena lebih aman untuk bersepeda tanpa ada halangan hujan, badai atau banjir.
         Untuk Lebih Jelasnya bisa dilihat dari grafik berikut!!
     """)
 
+    st.title("2.Kondisi cuaca mana yang paling sedikit peminjaman sepeda??")
+    st.write("""
+        Kondisi Cuaca Yang paling Sedikit Peminjaman Sepeda adalah pada saat cuaca Hujan Damai karena Sangat Berbahaya untuk bersepeda,dapat terjadi kecelakaan yang fatal.
+        Untuk Lebih Jelasnya bisa dilihat dari grafik berikut!!
+    """)
 
     # Streamlit UI
     st.header("Data Peminjaman Sepeda Berdasarkan Kondisi Cuaca")
@@ -51,6 +57,7 @@ def run():
 
     # Tampilkan chart di Streamlit
     st.pyplot(fig)
+
 
 
 # Jika dijalankan langsung (bukan dari import)
