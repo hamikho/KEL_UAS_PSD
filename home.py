@@ -15,7 +15,6 @@ option = st.sidebar.radio(
     key="sidebar_menu"
 )
 
-
 # Load dataset
 day = pd.read_csv('day.csv')
 hour = pd.read_csv('hour.csv')
