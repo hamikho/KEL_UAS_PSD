@@ -88,3 +88,4 @@ def run():
 # Jika dijalankan langsung (bukan dari import)
 if __name__ == "__main__":
     run()
+
